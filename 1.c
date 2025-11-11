@@ -1,30 +1,25 @@
-/*  Declare different types of pointers (int, float, char) and initialize 
-them with the addresses of variables. Print the values of 
-both the pointers and the variables they point to.*/
-#include <stdio.h>
+//Write a program to create a new file and write text into it. 
 
-int main()
-{
-    int a = 10;
-    float b = 3.14;
-    char c = 'A';
-
-    int *p1 = &a;
-    float *p2 = &b;
-    char *p3 = &c;
-
-    printf("Value of a = %d\n", a);
-    printf("Address of a = %p\n", p1);
-    printf("Value pointed by p1 = %d\n\n", *p1);
-
-    printf("Value of b = %.2f\n", b);
-    printf("Address of b = %p\n", p2);
-    printf("Value pointed by p2 = %.2f\n\n", *p2);
-
-    printf("Value of c = %c\n", c);
-    printf("Address of c = %p\n", p3);
-    printf("Value pointed by p3 = %c\n", *p3);
+/*#include<stdio.h>
+   int main()
+   {
+    FILE *a = fopen("Shourya.txt", "w");
+    fprintf(a, "Shourya Vardhan");
+    fclose(a);
 
     return 0;
-}
+   }*/
 
+#include <stdio.h>
+
+int main() {
+    FILE *a = fopen("SHourya.txt", "w");
+    char s[10];
+
+    fgets(s, 10, stdin);   // take input safely
+
+    fputs(s, a);           // write to file
+
+    fclose(a);
+    return 0;
+}
